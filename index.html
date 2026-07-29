@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  (function(){
+    var saved = localStorage.getItem('portfolio-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="progress-spine"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <a href="#home" class="nav-logo">OAB.DEV<span class="dot">.</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#home" class="nav-link active" data-section="home">Home</a>
+    <a href="#about" class="nav-link" data-section="about">About</a>
+    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+    <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="12" cy="12" r="4.5"/>
+      <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
+    </svg>
+    <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.6A9 9 0 1 1 11.4 3a7.2 7.2 0 0 0 9.6 9.6z"/>
+    </svg>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== HOME / HERO ===== -->
+<section id="home" class="section hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow reveal">Portfolio</p>
+      <h1 class="hero-title">
+        <span class="line reveal">Hi, I'm</span>
+        <span class="line reveal name-highlight">Omm Abinash Barik<span class="gold-underline"></span></span>
+      </h1>
+      <p class="hero-role reveal">I'm a <span class="multiple-text"></span><span class="cursor">|</span></p>
+      <p class="hero-desc reveal">I build clean, thoughtful digital experiences — from idea to interface. Here's a look at my work, my skills, and how to reach me.</p>
+      <div class="hero-cta reveal">
+        <a href="#projects" class="btn btn-primary magnetic"><span>View Projects</span></a>
+        <a href="#contact" class="btn btn-outline magnetic"><span>Contact Me</span></a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap reveal">
+      <div class="hero-photo-frame">
+       
+        <img src="images/Abhi image.jpg" alt="Your Name" class="hero-photo" id="heroPhoto"
+             onerror="this.closest('.hero-photo-frame').classList.add('no-photo')">
+        <div class="photo-placeholder-note">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="3" y="6" width="18" height="14" rx="2"/>
+            <circle cx="12" cy="13" r="3.2"/>
+            <path d="M8 6l1.2-2h5.6L16 6"/>
+          </svg>
+        </div>
+      </div>
+      <div class="photo-ring"></div>
+    </div>
+  </div>
+  <div class="scroll-cue reveal"><span></span></div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section about">
+  <div class="section-inner about-inner">
+    <div class="about-photo reveal-left">
+      <div class="about-photo-frame">
+        <img src="images/Abhi image.jpg" alt="Omm Abinash Barik" class="about-photo-img"
+             onerror="this.closest('.about-photo-frame').classList.add('no-photo')">
+        <div class="photo-placeholder-note small">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <rect x="3" y="6" width="18" height="14" rx="2"/>
+            <circle cx="12" cy="13" r="3.2"/>
+            <path d="M8 6l1.2-2h5.6L16 6"/>
+          </svg>
+          <span>Abhi Photo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content reveal-right">
+      <p class="eyebrow">About Me</p>
+      <h2 class="section-title">A little about my story</h2>
+      <p class="about-text">I'm a developer who enjoys turning ideas into clean, functional interfaces. My focus is on writing readable code and building products that feel effortless to use, from the first click to the last.</p>
+      <p class="about-text">Over the past few years I've worked across small projects and collaborative builds, sharpening both my technical skills and my eye for detail. I care about the small things — spacing, motion, timing — because they're what make a product feel considered.</p>
+
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label">Years Experience</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="20">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label">Projects Done</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="12">0</span><span class="stat-suffix">+</span>
+          <p class="stat-label">Happy Clients</p>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-outline magnetic small-btn"><span>Download Resume</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section skills">
+  <div class="section-inner">
+    <p class="eyebrow reveal center">Skills</p>
+    <h2 class="section-title reveal center">What I work with</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Languages</h3>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>HTML / CSS</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>JavaScript</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Python</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Java</span><span class="skill-pct">70%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h3>Frameworks</h3>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>React</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Node.js</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Tailwind CSS</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Django</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <h3>Tools</h3>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Git / GitHub</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Figma</span><span class="skill-pct">78%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>VS Code</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+          <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Jupyter Notebook</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section projects">
+  <div class="section-inner">
+    <p class="eyebrow reveal center">Projects</p>
+    <h2 class="section-title reveal center">Selected work</h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal" style="--i:0">
+        <div class="project-media">
+            <img src="images/Task_Manager.png" alt="Task Manager screenshot" class="project-img"
+               onerror="this.closest('.project-media').classList.add('no-img')">
+          <div class="project-media-placeholder">Project 01</div>
+        </div>
+        <div class="project-body">
+          <h3>Task Manager</h3>
+          <p>A full-stack task management application that helps users organize daily activities efficiently. It supports creating, updating, deleting, and tracking tasks with secure user authentication and a responsive interface. Built with Django, HTML, CSS, and JavaScript..</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>Django</span></div>
+          <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="--i:1">
+        <div class="project-media">
+               <img src="images/Loan Approval.png" alt="Loan approval system screenshot" class="project-img"
+               onerror="this.closest('.project-media').classList.add('no-img')">
+          <div class="project-media-placeholder">Project 02</div>
+        </div>
+        <div class="project-body">
+          <h3>Loan Approval System</h3>
+          <p>A machine learning–based web application that predicts whether a loan application is likely to be approved using customer financial data. The system provides fast, accurate predictions through a clean and responsive interface. Built with Flask, Machine Learning, HTML, CSS, and JavaScript..</p>
+          <div class="tags"><span>Flask</span><span>ScikitLearn</span><span>React</span></div>
+          <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="--i:2">
+        <div class="project-media">
+            <img src="images/Room Booking System.png" alt="Loan approval system screenshot" class="project-img"
+               onerror="this.closest('.project-media').classList.add('no-img')">
+          <div class="project-media-placeholder">Project 03</div>
+        </div>
+        <div class="project-body">
+          <h3>Room Booking System</h3>
+          <p>A modern room reservation platform that enables users to browse available rooms, make bookings, and manage reservations seamlessly. It includes secure authentication, real-time availability tracking, and an intuitive dashboard. Built with Django, React, and SQLite3..</p>
+          <div class="tags"><span>Django</span><span>sqlite3</span><span>React</span></div>
+          <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="--i:3">
+        <div class="project-media">
+             <img src="images/Krusi Shayak.png" alt="Loan approval system screenshot" class="project-img"
+               onerror="this.closest('.project-media').classList.add('no-img')">
+          <div class="project-media-placeholder">Project 04</div>
+        </div>
+        <div class="project-body">
+          <h3>Krusi Sahayak</h3>
+          <p>Krusi Sahayak is ML based agricultural prediction system that help farmers make informed decissions throgh weather forecasting,crop price prediction and pesticides recommendation.</p>
+          <div class="tags"><span>Fastapi</span><span>HTML,CSS,JS</span></div>
+          <a href="#" class="project-link">View Project <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section contact">
+  <div class="section-inner contact-inner">
+    <div class="contact-left reveal-left">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">Let's work together</h2>
+      <p class="contact-desc">Have a project in mind or just want to say hello? My inbox is always open.</p>
+
+      <ul class="contact-list">
+        <li>
+          <span class="contact-icon">✉</span>
+          <div><span class="contact-label">Email</span><a href="mailto:you@example.com">ommabinash11@gmail.com</a></div>
+        </li>
+        <li>
+          <span class="contact-icon">☎</span>
+          <div><span class="contact-label">Phone</span><a href="tel:+910000000000">+91 63703 55406</a></div>
+        </li>
+        <li>
+          <span class="contact-icon">📍</span>
+          <div><span class="contact-label">Location</span><span>Odisha, India</span></div>
+        </li>
+      </ul>
+ <div class="social-row">
+        <a href="https://github.com/Abinash-6370" aria-label="GitHub" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="19" height="19"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="ommabinash11@gmail.com" aria-label="Email" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.3 7.36 5.6a.75.75 0 0 0 .88 0l7.36-5.6a1 1 0 0 0-.8-.3H5a1 1 0 0 0-.8.3zM20 7.9l-6.86 5.22a2.75 2.75 0 0 1-3.28 0L3 7.9v10.6c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V7.9z"/></svg>
+        </a>
+      </div>
+    </div>
+ 
+
+    <form class="contact-form reveal-right" id="contactForm">
+      <div class="form-group">
+        <input type="text" id="name" name="name" required placeholder="Enter your Name: ">
+        <label for="name"></label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" required placeholder="Enter your E-mail ">
+        <label for="email"></label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" rows="5" required placeholder="Write your Query:  "></textarea>
+        <label for="message"></label>
+      </div>
+      <button type="submit" class="btn btn-primary magnetic full-width" id="submitBtn">
+        <span id="submitText">Send Message</span>
+      </button>
+      <p class="form-success" id="formSuccess">✓ Message sent — thank you! I'll get back to you soon.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Abinash. Crafted with care.</p>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
