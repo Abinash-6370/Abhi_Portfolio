@@ -164,21 +164,30 @@ document.addEventListener('DOMContentLoaded', () => {
     typeLoop();
   }
 
-  const form = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const formSuccess = document.getElementById('formSuccess');
+ const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formSuccess = document.getElementById('formSuccess');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    submitBtn.classList.add('loading');
-    submitBtn.disabled = true;
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.classList.add('loading');
+  submitBtn.disabled = true;
+  formSuccess.classList.remove('show');
 
-    setTimeout(() => {
-      submitBtn.classList.remove('loading');
-      submitBtn.disabled = false;
-      formSuccess.classList.add('show');
-      form.reset();
-      setTimeout(() => formSuccess.classList.remove('show'), 4000);
-    }, 1200);
-  });
+  try {
+    await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+  } catch (err) {
+    console.error('Form submission error:', err);
+  } finally {
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+    formSuccess.classList.add('show');
+    form.reset();
+    setTimeout(() => formSuccess.classList.remove('show'), 5000);
+  }
+});
 });
